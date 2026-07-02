@@ -341,7 +341,7 @@ class FormConversionService
     private function createSalesContact(array $data): mixed
     {
         if ($this->user->can('create-sales-contacts')) {
-            $contact = new \Workdo\Sales\Models\SalesContact();
+            $contact = new \Zerp\Sales\Models\SalesContact();
             $contact->name              = $data['name'] ?? '';
             $contact->email             = $data['email'] ?? '';
             $contact->phone             = $data['phone'] ?? '';
@@ -365,7 +365,7 @@ class FormConversionService
     private function createSalesOpportunity(array $data): mixed
     {
         if ($this->user->can('create-sales-opportunities')) {
-            $opportunity = new \Workdo\Sales\Models\SalesOpportunity();
+            $opportunity = new \Zerp\Sales\Models\SalesOpportunity();
             $opportunity->name              = $data['name'] ?? '';
             $opportunity->account_id        = $data['account_id'] ?? null;
             $opportunity->contact_id        = $data['contact_id'] ?? null;
@@ -408,7 +408,7 @@ class FormConversionService
     private function createBook(array $data): mixed
     {
         if ($this->user->can('create-internalknowledge-books')) {
-            $book = new \Workdo\Internalknowledge\Models\InternalknowledgeBook();
+            $book = new \Zerp\Internalknowledge\Models\InternalknowledgeBook();
             $book->title        = $data['title'] ?? '';
             $book->description  = $data['description'] ?? '';
 
@@ -431,7 +431,7 @@ class FormConversionService
     private function createArticle(array $data): mixed
     {
         if ($this->user->can('create-internalknowledge-articles')) {
-            $article = new \Workdo\Internalknowledge\Models\InternalknowledgeArticle();
+            $article = new \Zerp\Internalknowledge\Models\InternalknowledgeArticle();
             $article->internalknowledge_book_id = $data['internalknowledge_book_id'] ?? null;
             $article->title           = $data['title'] ?? '';
             $article->description     = $data['description'] ?? '';
@@ -450,7 +450,7 @@ class FormConversionService
     private function createNote(array $data): mixed
     {
         if ($this->user->can('create-notes')) {
-            $note = new \Workdo\Notes\Models\Note();
+            $note = new \Zerp\Notes\Models\Note();
             $note->title = $data['title'] ?? '';
             $note->description = $data['description'] ?? '';
             $note->color = $data['color'] ?? 'bg-primary';
@@ -469,7 +469,7 @@ class FormConversionService
     private function createLocation(array $data): mixed
     {
         if ($this->user->can('create-cmms-locations')) {
-            $location = new \Workdo\CMMS\Models\CmmsLocation();
+            $location = new \Zerp\CMMS\Models\CmmsLocation();
             $location->name = $data['name'] ?? '';
             $location->address = $data['address'] ?? '';
             $location->creator_id = $this->creator_id;
@@ -484,7 +484,7 @@ class FormConversionService
     private function createMachine(array $data): mixed
     {
         if ($this->user->can('create-machines')) {
-            $machine = new \Workdo\MachineRepairManagement\Models\Machine();
+            $machine = new \Zerp\MachineRepairManagement\Models\Machine();
             $machine->machine_name = $data['machine_name'] ?? '';
             $machine->manufacturer = $data['manufacturer'] ?? '';
             $machine->model = $data['model'] ?? '';

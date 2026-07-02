@@ -409,10 +409,10 @@ class FormController extends Controller
                 'lead_pipelines' => Module_is_active('Lead') && class_exists('\Zerp\Lead\Models\Pipeline') ? \Zerp\Lead\Models\Pipeline::where('created_by', creatorId())->select('id', 'name')->get() : [],
                 'deal_pipelines' => Module_is_active('Lead') && class_exists('\Zerp\Lead\Models\DealPipeline') ? \Zerp\Lead\Models\DealPipeline::where('created_by', creatorId())->select('id', 'name')->get() : [],
                 'clients' => Module_is_active('Lead') && class_exists('\Zerp\Lead\Models\User') ? \Zerp\Lead\Models\User::where('type', 'client')->where('created_by', creatorId())->select('id', 'name')->get() : [],
-                'accounts' => Module_is_active('Sales') && class_exists('\Workdo\Sales\Models\Account') ? \Workdo\Sales\Models\Account::where('created_by', creatorId())->select('id', 'name')->get() : [],
-                'opportunity_stages' => Module_is_active('Sales') && class_exists('\Workdo\Sales\Models\OpportunitiesStage') ? \Workdo\Sales\Models\OpportunitiesStage::where('created_by', creatorId())->select('id', 'name')->get() : [],
+                'accounts' => Module_is_active('Sales') && class_exists('\Zerp\Sales\Models\Account') ? \Zerp\Sales\Models\Account::where('created_by', creatorId())->select('id', 'name')->get() : [],
+                'opportunity_stages' => Module_is_active('Sales') && class_exists('\Zerp\Sales\Models\OpportunitiesStage') ? \Zerp\Sales\Models\OpportunitiesStage::where('created_by', creatorId())->select('id', 'name')->get() : [],
                 'contract_types' => Module_is_active('Contract') && class_exists('\Zerp\Contract\Models\ContractType') ? \Zerp\Contract\Models\ContractType::where('created_by', creatorId())->select('id', 'name')->get() : [],
-                'books' => Module_is_active('InternalKnowledge') && class_exists('\Workdo\Internalknowledge\Models\Book') ? \Workdo\Internalknowledge\Models\Book::where('created_by', creatorId())->select('id', 'title as name')->get() : [],
+                'books' => Module_is_active('InternalKnowledge') && class_exists('\Zerp\Internalknowledge\Models\Book') ? \Zerp\Internalknowledge\Models\Book::where('created_by', creatorId())->select('id', 'title as name')->get() : [],
             ]);
         } else {
             return response()->json(['error' => 'Permission denied'], 403);

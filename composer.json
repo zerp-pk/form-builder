@@ -1,6 +1,6 @@
 {
     "name": "zerp/form-builder",
-    "description": "Description for form-builder package",
+    "description": "Custom form builder module for the Zerp ERP platform",
     "type": "library",
     "license": "MIT",
     "require": {},
