@@ -35,7 +35,7 @@ class FormController extends Controller
                 ->withCount(['responses', 'fields'])
                 ->when(request('name'), fn($q) => $q->where('name', 'like', '%' . request('name') . '%'))
                 ->when(request('is_active') !== null, fn($q) => $q->where('is_active', request('is_active')))
-                ->orderBy(request('sort', 'created_at'), request('direction', 'desc'))
+                ->sortSafe(request('sort'), request('direction'), 'created_at', 'desc')
                 ->paginate(request('per_page', 10))
                 ->withQueryString();
 
